@@ -10,7 +10,7 @@ namespace ploomesTest.Domain.Models.Enums
     {
         public enum EnviromentDatabase
         {
-            ANM
+            AMN
         }
     }
 }

@@ -7,6 +7,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ploomesTest.Application.Interfaces;
+using ploomesTest.Application.Services;
+using ploomesTest.Domain.Interfaces.Command;
+using ploomesTest.Domain.Interfaces.Repository;
+using ploomesTest.Domain.Services;
+using ploomesTest.Infra.Data.DbConfig;
+using ploomesTest.Infra.Data.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +39,13 @@ namespace ploomesTest
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ploomesTest", Version = "v1" });
             });
+
+            #region dependency injection
+            services.AddSingleton<IGenreRepository, GenreRepository>();
+            services.AddSingleton<IListGenreByAnimeIdDomain, ListGenreByAnimeIdDomain>();
+            services.AddSingleton<IGenreApplication, GenreApplication>();
+            services.AddSingleton<IListAllGenreDomain, ListAllGenreDomain>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

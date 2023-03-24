@@ -9,7 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\ploomesTest.Application\ploomesTest.Application.csproj" />
+    <ProjectReference Include="..\ploomesTest.Domain\ploomesTest.Domain.csproj" />
   </ItemGroup>
 
 </Project>

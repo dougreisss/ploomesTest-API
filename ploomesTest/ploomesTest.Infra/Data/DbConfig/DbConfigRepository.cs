@@ -11,16 +11,19 @@ using System.Reflection;
 
 namespace ploomesTest.Infra.Data.DbConfig
 {
-    public class DbConfig
+    public class DbConfigRepository
     {
         #region Config
         private readonly IConfiguration configuration;
 
         private const int DefaultTimeout = 300;
 
-        public DbConfig(IConfiguration Configuration)
+        public DbConfigRepository()
         {
-            this.configuration = Configuration;
+            IConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
+                .SetBasePath(AppContext.BaseDirectory)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            configuration = configurationBuilder.Build();
         }
         #endregion
         #region Connection Db
@@ -150,7 +153,7 @@ namespace ploomesTest.Infra.Data.DbConfig
 
         private string GetConnectionString(Enviroment.EnviromentDatabase db)
         {
-            return configuration[$"ConnectionStrings:{db}"];
+            return configuration.GetConnectionString(db.ToString());
         }
 
         #endregion
