@@ -46,6 +46,7 @@ namespace ploomesTest
             services.AddSingleton<IGenreApplication, GenreApplication>();
             services.AddSingleton<IListAllGenreDomain, ListAllGenreDomain>();
             services.AddSingleton<IUpdateGenreDomain, UpdateGenreDomain>();
+            services.AddSingleton<IInsertGenreDomain, InsertGenreDomain>();
             #endregion
         }
 

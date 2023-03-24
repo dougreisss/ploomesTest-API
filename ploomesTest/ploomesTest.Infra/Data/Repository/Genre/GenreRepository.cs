@@ -15,6 +15,16 @@ namespace ploomesTest.Infra.Data.Repository
     {
         private readonly EnviromentDatabase environment = EnviromentDatabase.AMN;
 
+        public bool InsertGenre(GenreDomain genreDomain)
+        {
+            DbConfigRepository dbConfig = new DbConfigRepository();
+            int ret = dbConfig.ExecuteNonQuery(environment, "AMN.spINSGenre", new { 
+                GenreName = genreDomain.GenreName
+            });
+
+            return ret > 0 ? true : false; 
+        }
+
         public List<GenreDomain> ListAllGenre()
         {
             DbConfigRepository dbConfig = new DbConfigRepository();

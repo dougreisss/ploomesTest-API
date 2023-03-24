@@ -12,5 +12,6 @@ namespace ploomesTest.Application.Interfaces
         public List<vmGenre> ListGenreByAnimeId(int animeId);
         public List<vmGenre> ListAllGenre();
         public bool UpdateGenre(vmGenre vmGenre);
+        public bool InsertGenre(vmGenre vmGenre);
     }
 }

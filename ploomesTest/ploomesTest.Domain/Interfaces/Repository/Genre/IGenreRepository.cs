@@ -12,5 +12,6 @@ namespace ploomesTest.Domain.Interfaces.Repository
         public List<GenreDomain> ListGenreByAnimeId(int animeId);
         public List<GenreDomain> ListAllGenre();
         public bool UpdateGenre(GenreDomain genreDomain);
+        public bool InsertGenre(GenreDomain genreDomain);
     }
 }

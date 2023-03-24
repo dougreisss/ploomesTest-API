@@ -15,15 +15,24 @@ namespace ploomesTest.Application.Services
         private readonly IListGenreByAnimeIdDomain _listGenreByAnimeIdDomain;
         private readonly IListAllGenreDomain _listAllGenreDomain;
         private readonly IUpdateGenreDomain _updateGenreDomain;
+        private readonly IInsertGenreDomain _insertGenreDomain;
+
         public GenreApplication(
             IListGenreByAnimeIdDomain listGenreByAnimeId, 
             IListAllGenreDomain listAllGenreDomain,
-            IUpdateGenreDomain updateGenreDomain
+            IUpdateGenreDomain updateGenreDomain,
+            IInsertGenreDomain insertGenreDomain
         )
         {
             _listGenreByAnimeIdDomain = listGenreByAnimeId;
             _listAllGenreDomain = listAllGenreDomain;
             _updateGenreDomain = updateGenreDomain;
+            _insertGenreDomain = insertGenreDomain;
+        }
+
+        public bool InsertGenre(vmGenre vmGenre)
+        {
+            return _insertGenreDomain.InsertGenre(Read<GenreDomain>(vmGenre));
         }
 
         public List<vmGenre> ListAllGenre()

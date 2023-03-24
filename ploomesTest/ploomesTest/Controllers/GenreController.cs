@@ -76,7 +76,7 @@ namespace ploomesTest.WebApi.Controllers
             }
         }
 
-        [HttpPost("UpdateGenre")]
+        [HttpPut("UpdateGenre")]
         [Produces("application/json")]
         public IActionResult UpdateGenre(vmGenre vmGenre)
         {
@@ -101,5 +101,33 @@ namespace ploomesTest.WebApi.Controllers
                 return BadRequest(result);
             }
         }
+
+        [HttpPost("InsertGenre")]
+        [Produces("application/json")]
+        public IActionResult InsertGenre(vmGenre vmGenre)
+        {
+            vmResult result = new vmResult();
+
+            try
+            {
+                if (!_genreApplication.InsertGenre(vmGenre))
+                {
+                    result.friendlyErrorMessage = "Não foi possível inserir este registro";
+                    return BadRequest(result);
+                }
+
+                result.data = vmGenre.GenreName;
+                result.friendlyErrorMessage = "Registro inserido com sucesso!";
+                return Ok(result);
+
+            }
+            catch (Exception ex)
+            {
+                result.friendlyErrorMessage = "Houve um erro";
+                result.stackTrace = ex.Message + "/n" + ex.StackTrace;
+                return BadRequest(result);
+            }
+        }
+
     }
 }

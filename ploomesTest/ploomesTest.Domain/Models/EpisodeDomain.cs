@@ -9,6 +9,7 @@ namespace ploomesTest.Domain.Models
     public class EpisodeDomain
     {
         public int EpisodeId { get; set; }
+        public int AnimeId { get; set; }
         public string EpisodeName { get; set; }
         public DateTime EpisodeLength { get; set; }
         public string EpisodeSynopsis { get; set; }
