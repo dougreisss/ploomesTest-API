@@ -1,6 +1,7 @@
 ﻿using ploomesTest.Application.Interfaces;
 using ploomesTest.Application.ViewModels;
 using ploomesTest.Domain.Interfaces.Command;
+using ploomesTest.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,18 @@ namespace ploomesTest.Application.Services
 {
     public class GenreApplication : ApplicationBase, IGenreApplication
     {
-        IListGenreByAnimeIdDomain _listGenreByAnimeIdDomain;
-        IListAllGenreDomain _listAllGenreDomain;
-        public GenreApplication(IListGenreByAnimeIdDomain listGenreByAnimeId, IListAllGenreDomain listAllGenreDomain)
+        private readonly IListGenreByAnimeIdDomain _listGenreByAnimeIdDomain;
+        private readonly IListAllGenreDomain _listAllGenreDomain;
+        private readonly IUpdateGenreDomain _updateGenreDomain;
+        public GenreApplication(
+            IListGenreByAnimeIdDomain listGenreByAnimeId, 
+            IListAllGenreDomain listAllGenreDomain,
+            IUpdateGenreDomain updateGenreDomain
+        )
         {
             _listGenreByAnimeIdDomain = listGenreByAnimeId;
             _listAllGenreDomain = listAllGenreDomain;
+            _updateGenreDomain = updateGenreDomain;
         }
 
         public List<vmGenre> ListAllGenre()
@@ -32,6 +39,9 @@ namespace ploomesTest.Application.Services
             return List<vmGenre>(lstGenreByAnimeId);
         }
 
-     
+        public bool UpdateGenre(vmGenre vmGenre)
+        {
+            return _updateGenreDomain.UpdateGenre(Read<GenreDomain>(vmGenre));
+        }
     }
 }

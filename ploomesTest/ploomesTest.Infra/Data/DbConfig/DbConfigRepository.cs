@@ -81,8 +81,7 @@ namespace ploomesTest.Infra.Data.DbConfig
                     returnParameter.Direction = ParameterDirection.ReturnValue;
 
                     conn.Open();
-                    cmd.ExecuteNonQuery();
-                    id = Convert.ToInt32(returnParameter.Value);
+                    id = cmd.ExecuteNonQuery();
                 }
             }
             return id;

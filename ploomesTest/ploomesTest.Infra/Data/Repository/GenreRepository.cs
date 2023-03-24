@@ -27,13 +27,20 @@ namespace ploomesTest.Infra.Data.Repository
 
             return dbConfig.ExecuteList<GenreDomain>(environment, "AMN.spLSTGenreByAnimeId", new
             {
-
                 AnimeId = animeId
+            });
+        }
+        public bool UpdateGenre(GenreDomain genreDomain)
+        {
+            DbConfigRepository dbConfig = new DbConfigRepository();
 
+            int ret = dbConfig.ExecuteNonQuery(environment, "AMN.spUPDGenre", new
+            {
+                GenreId = genreDomain.GenreId,
+                GenreName = genreDomain.GenreName
             });
 
+            return ret > 0 ? true : false;
         }
-
-        
     }
 }

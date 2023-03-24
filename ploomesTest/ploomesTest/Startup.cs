@@ -45,6 +45,7 @@ namespace ploomesTest
             services.AddSingleton<IListGenreByAnimeIdDomain, ListGenreByAnimeIdDomain>();
             services.AddSingleton<IGenreApplication, GenreApplication>();
             services.AddSingleton<IListAllGenreDomain, ListAllGenreDomain>();
+            services.AddSingleton<IUpdateGenreDomain, UpdateGenreDomain>();
             #endregion
         }
 

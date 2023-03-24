@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ploomesTest.Domain.Interfaces.Repository
+namespace ploomesTest.Domain.Interfaces.Command
 {
-    public interface IGenreRepository
+    public interface IUpdateGenreDomain
     {
-        public List<GenreDomain> ListGenreByAnimeId(int animeId);
-        public List<GenreDomain> ListAllGenre();
         public bool UpdateGenre(GenreDomain genreDomain);
     }
 }

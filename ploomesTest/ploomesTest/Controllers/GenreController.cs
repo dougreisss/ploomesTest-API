@@ -65,8 +65,34 @@ namespace ploomesTest.WebApi.Controllers
 
                 result.data = lstAllGenre;
 
-                return Ok(lstAllGenre);
+                return Ok(result);
 
+            }
+            catch (Exception ex)
+            {
+                result.friendlyErrorMessage = "Houve um erro";
+                result.stackTrace = ex.Message + "/n" + ex.StackTrace;
+                return BadRequest(result);
+            }
+        }
+
+        [HttpPost("UpdateGenre")]
+        [Produces("application/json")]
+        public IActionResult UpdateGenre(vmGenre vmGenre)
+        {
+            vmResult result = new vmResult();
+
+            try
+            {
+                if (!_genreApplication.UpdateGenre(vmGenre))
+                {
+                    result.friendlyErrorMessage = "Não foi possível atualizar este registro";
+                    return BadRequest(result);
+                }
+
+                result.data = vmGenre;
+                result.friendlyErrorMessage = "Registro atualizado com sucesso!";
+                return Ok(result);
             }
             catch (Exception ex)
             {
