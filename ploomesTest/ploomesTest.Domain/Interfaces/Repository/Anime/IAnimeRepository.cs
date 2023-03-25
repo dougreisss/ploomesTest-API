@@ -10,5 +10,8 @@ namespace ploomesTest.Domain.Interfaces.Repository.Anime
     public interface IAnimeRepository
     {
         public List<AllAnimesDomain> ListAllAnimes();
+        public AllAnimesDomain ListAllAnimesById(int animeId, int episodeId);
+        public bool InsertAnime(AnimeDomain animeDomain);
+        public bool UpdateAnime(AnimeDomain animeDomain);
     }
 }

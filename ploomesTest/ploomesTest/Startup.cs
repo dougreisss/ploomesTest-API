@@ -53,6 +53,9 @@ namespace ploomesTest
             services.AddSingleton<IAnimeRepository, AnimeRepository>();
             services.AddSingleton<IListAllAnimesDomain, ListAllAnimesDomain>();
             services.AddSingleton<IAnimeApplication, AnimeApplication>();
+            services.AddSingleton<IListAllAnimesByIdDomain, ListAllAnimesByIdDomain>();
+            services.AddSingleton<IInsertAnimeDomain, InsertAnimeDomain>();
+            services.AddSingleton<IUpdateAnimeDomain, UpdateAnimeDomain>();
             #endregion
         }
 

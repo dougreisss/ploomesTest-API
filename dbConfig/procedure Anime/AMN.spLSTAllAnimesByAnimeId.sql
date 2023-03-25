@@ -1,7 +1,8 @@
-
 use prjAnime
 go
-create procedure AMN.spLSTAllAnimes
+create or alter procedure AMN.spLSTAllAnimesByAnimeIdAndEpisodeId 2, 12
+@AnimeId int,
+@EpisodeId int
 as
 begin
 
@@ -26,24 +27,21 @@ begin
 
 	from AMN.Anime A
 
-	left join AMN.Episode E 
+	inner join AMN.Episode E 
 	on A.AnimeId = E.AnimeId
 
-	left join AMN.Studio S 
+	inner join AMN.Studio S 
 	on S.StudioId = A.StudioId
 
-	outer apply 
-	(
-		select 
-		AGN.GenreId 
-		from AMN.Anime_Genre AGN
-		where AGN.AnimeId = E.EpisodeId
-	) ATA
+	inner join AMN.Anime_Genre ANG
+	on ANG.AnimeId = A.AnimeId
 
-	left join AMN.Genre G 
-	on G.GenreId = ATA.GenreId
+	inner join AMN.Genre G 
+	on G.GenreId = ANG.GenreId
 
-	left join AMN.Season SE
+	inner join AMN.Season SE
 	on SE.SeasonId = E.SeasonId
+
+	where E.AnimeId = @AnimeId and E.EpisodeId = @EpisodeId
 
 end

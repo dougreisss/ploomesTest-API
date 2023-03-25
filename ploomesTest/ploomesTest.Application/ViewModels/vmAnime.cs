@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ploomesTest.Domain.Models
+namespace ploomesTest.Application.ViewModels
 {
-    public class AnimeDomain
+    public class vmAnime
     {
         public int AnimeId { get; set; }
         public string Title { get; set; }
