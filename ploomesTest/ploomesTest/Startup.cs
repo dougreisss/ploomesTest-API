@@ -12,15 +12,19 @@ using ploomesTest.Application.Services;
 using ploomesTest.Domain.Interfaces.Command;
 using ploomesTest.Domain.Interfaces.Command.Anime;
 using ploomesTest.Domain.Interfaces.Command.Episode;
+using ploomesTest.Domain.Interfaces.Command.Studio;
 using ploomesTest.Domain.Interfaces.Repository;
 using ploomesTest.Domain.Interfaces.Repository.Anime;
 using ploomesTest.Domain.Interfaces.Repository.Episode;
+using ploomesTest.Domain.Interfaces.Repository.Studio;
 using ploomesTest.Domain.Services;
 using ploomesTest.Domain.Services.Anime;
 using ploomesTest.Domain.Services.Episode;
+using ploomesTest.Domain.Services.Studio;
 using ploomesTest.Infra.Data.DbConfig;
 using ploomesTest.Infra.Data.Repository;
 using ploomesTest.Infra.Data.Repository.Episode;
+using ploomesTest.Infra.Data.Repository.Studio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +69,11 @@ namespace ploomesTest
             services.AddSingleton<IEpisodeApplication, EpisodeApplication>();
             services.AddSingleton<IInsertEpisodeDomain, InsertEpisodeDomain>();
             services.AddSingleton<IUpdateEpisodeDomain, UpdateEpisodeDomain>();
+            services.AddSingleton<IStudioRepository, StudioRepository>();
+            services.AddSingleton<IListAllStudioDomain, ListAllStudioDomain>();
+            services.AddSingleton<IStudioApplication, StudioApplication>();
+            services.AddSingleton<IInsertStudioDomain, InsertStudioDomain>();
+            services.AddSingleton<IUpdateStudioDomain, UpdateStudioDomain>();
             #endregion
         }
 

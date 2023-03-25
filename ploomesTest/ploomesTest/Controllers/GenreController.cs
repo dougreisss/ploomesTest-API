@@ -116,7 +116,7 @@ namespace ploomesTest.WebApi.Controllers
                     return BadRequest(result);
                 }
 
-                result.data = vmGenre.GenreName;
+                result.data = vmGenre;
                 result.message = "Registro inserido com sucesso!";
                 return Ok(result);
 
