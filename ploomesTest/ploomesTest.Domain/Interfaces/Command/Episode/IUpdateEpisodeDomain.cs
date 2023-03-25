@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ploomesTest.Domain.Interfaces.Repository.Episode
+namespace ploomesTest.Domain.Interfaces.Command.Episode
 {
-    public interface IEpisodeRepository
+    public interface IUpdateEpisodeDomain
     {
-        public List<EpisodeDomain> ListEpisodeByAnimeId(int animeId);
-        public bool InsertEpisode(EpisodeDomain episodeDomain);
         public bool UpdateEpisode(EpisodeDomain episodeDomain);
     }
 }

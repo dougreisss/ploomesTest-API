@@ -10,6 +10,7 @@ namespace ploomesTest.Application.ViewModels
     {
         public object data { get; set; }
         public string friendlyErrorMessage { get; set; }
+        public string message { get; set; }
         public string stackTrace { get; set; }
     }
 }

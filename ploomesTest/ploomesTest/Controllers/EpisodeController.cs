@@ -46,5 +46,58 @@ namespace ploomesTest.WebApi.Controllers
                 return BadRequest(result);
             }
         }
+
+        [HttpPost("InsertEpisode")]
+        [Produces("application/json")]
+        public IActionResult InsertEpisode(vmEpisode episode)
+        {
+            vmResult result = new vmResult();
+
+            try
+            {
+                if (!_episodeApplication.InsertEpisode(episode))
+                {
+                    result.friendlyErrorMessage = "Não foi possível inserir este registro";
+                    return BadRequest(result);
+                }
+
+
+                result.data = episode;
+                result.message = "Registro inserido com sucesso!";
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                result.friendlyErrorMessage = "Houve um erro";
+                result.stackTrace = ex.Message + "/n" + ex.StackTrace;
+                return BadRequest(result);
+            }
+        }
+
+        [HttpPut("UpdateEpisode")]
+        [Produces("application/json")]
+        public IActionResult UpdateEpisode(vmEpisode vmEpisode)
+        {
+            vmResult result = new vmResult();
+
+            try
+            {
+                if (!_episodeApplication.UpdateEpisode(vmEpisode))
+                {
+                    result.friendlyErrorMessage = "Não foi possível atualizar este registro";
+                    return BadRequest(result);
+                }
+
+                result.data = vmEpisode;
+                result.message = "Registro atualizado com sucesso!";
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                result.friendlyErrorMessage = "Houve um erro";
+                result.stackTrace = ex.Message + "/n" + ex.StackTrace;
+                return BadRequest(result);
+            }
+        }
     }
 }

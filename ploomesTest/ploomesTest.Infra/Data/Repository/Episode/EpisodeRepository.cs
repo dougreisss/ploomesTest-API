@@ -14,6 +14,23 @@ namespace ploomesTest.Infra.Data.Repository.Episode
     {
         private readonly EnviromentDatabase environment = EnviromentDatabase.AMN;
 
+        public bool InsertEpisode(EpisodeDomain episodeDomain)
+        {
+            DbConfigRepository dbConfig = new DbConfigRepository();
+
+            int ret = dbConfig.ExecuteNonQuery(environment, "AMN.spINSEpisode", new {
+
+                AnimeId = episodeDomain.AnimeId,
+                EpisodeName = episodeDomain.EpisodeName,
+                EpisodeLength = DateTime.Parse(episodeDomain.EpisodeLength),
+                EpisodeSynopsis = episodeDomain.EpisodeSynopsis,
+                EpisodeRealease = episodeDomain.EpisodeRealease,
+                SeasonId = episodeDomain.SeasonId
+            });
+
+            return ret > 0 ? true : false;
+        }
+
         public List<EpisodeDomain> ListEpisodeByAnimeId(int animeId)
         {
             DbConfigRepository dbConfig = new DbConfigRepository();
@@ -21,6 +38,23 @@ namespace ploomesTest.Infra.Data.Repository.Episode
             {
                 AnimeId = animeId
             });
+        }
+
+        public bool UpdateEpisode(EpisodeDomain episodeDomain)
+        {
+            DbConfigRepository dbConfig = new DbConfigRepository();
+            int ret = dbConfig.ExecuteNonQuery(environment, "AMN.spUPDEpisode", new
+            {
+                EpisodeId = episodeDomain.EpisodeId,
+                AnimeId = episodeDomain.AnimeId,
+                EpisodeName = episodeDomain.EpisodeName,
+                EpisodeLength = episodeDomain.EpisodeLength,
+                EpisodeSynopsis = episodeDomain.EpisodeSynopsis,
+                EpisodeRealease = episodeDomain.EpisodeRealease,
+                SeasonId = episodeDomain.SeasonId
+            });
+
+            return ret > 0 ? true : false;
         }
     }
 }

@@ -91,7 +91,7 @@ namespace ploomesTest.WebApi.Controllers
                 }
 
                 result.data = vmGenre;
-                result.friendlyErrorMessage = "Registro atualizado com sucesso!";
+                result.message = "Registro atualizado com sucesso!";
                 return Ok(result);
             }
             catch (Exception ex)
@@ -117,7 +117,7 @@ namespace ploomesTest.WebApi.Controllers
                 }
 
                 result.data = vmGenre.GenreName;
-                result.friendlyErrorMessage = "Registro inserido com sucesso!";
+                result.message = "Registro inserido com sucesso!";
                 return Ok(result);
 
             }

@@ -63,6 +63,8 @@ namespace ploomesTest
             services.AddSingleton<IEpisodeRepository, EpisodeRepository>();
             services.AddSingleton<IListEpisodeByAnimeIdDomain, ListEpisodeByAnimeIdDomain>();
             services.AddSingleton<IEpisodeApplication, EpisodeApplication>();
+            services.AddSingleton<IInsertEpisodeDomain, InsertEpisodeDomain>();
+            services.AddSingleton<IUpdateEpisodeDomain, UpdateEpisodeDomain>();
             #endregion
         }
 

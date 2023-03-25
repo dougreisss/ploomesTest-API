@@ -14,5 +14,6 @@ namespace ploomesTest.Application.ViewModels
         public string EpisodeLength { get; set; }
         public string EpisodeSynopsis { get; set; }
         public DateTime EpisodeRealease { get; set; }
+        public int SeasonId { get; set; }
     }
 }
