@@ -11,12 +11,16 @@ using ploomesTest.Application.Interfaces;
 using ploomesTest.Application.Services;
 using ploomesTest.Domain.Interfaces.Command;
 using ploomesTest.Domain.Interfaces.Command.Anime;
+using ploomesTest.Domain.Interfaces.Command.Episode;
 using ploomesTest.Domain.Interfaces.Repository;
 using ploomesTest.Domain.Interfaces.Repository.Anime;
+using ploomesTest.Domain.Interfaces.Repository.Episode;
 using ploomesTest.Domain.Services;
 using ploomesTest.Domain.Services.Anime;
+using ploomesTest.Domain.Services.Episode;
 using ploomesTest.Infra.Data.DbConfig;
 using ploomesTest.Infra.Data.Repository;
+using ploomesTest.Infra.Data.Repository.Episode;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +60,9 @@ namespace ploomesTest
             services.AddSingleton<IListAllAnimesByIdDomain, ListAllAnimesByIdDomain>();
             services.AddSingleton<IInsertAnimeDomain, InsertAnimeDomain>();
             services.AddSingleton<IUpdateAnimeDomain, UpdateAnimeDomain>();
+            services.AddSingleton<IEpisodeRepository, EpisodeRepository>();
+            services.AddSingleton<IListEpisodeByAnimeIdDomain, ListEpisodeByAnimeIdDomain>();
+            services.AddSingleton<IEpisodeApplication, EpisodeApplication>();
             #endregion
         }
 
