@@ -10,8 +10,11 @@ using Microsoft.OpenApi.Models;
 using ploomesTest.Application.Interfaces;
 using ploomesTest.Application.Services;
 using ploomesTest.Domain.Interfaces.Command;
+using ploomesTest.Domain.Interfaces.Command.Anime;
 using ploomesTest.Domain.Interfaces.Repository;
+using ploomesTest.Domain.Interfaces.Repository.Anime;
 using ploomesTest.Domain.Services;
+using ploomesTest.Domain.Services.Anime;
 using ploomesTest.Infra.Data.DbConfig;
 using ploomesTest.Infra.Data.Repository;
 using System;
@@ -47,6 +50,9 @@ namespace ploomesTest
             services.AddSingleton<IListAllGenreDomain, ListAllGenreDomain>();
             services.AddSingleton<IUpdateGenreDomain, UpdateGenreDomain>();
             services.AddSingleton<IInsertGenreDomain, InsertGenreDomain>();
+            services.AddSingleton<IAnimeRepository, AnimeRepository>();
+            services.AddSingleton<IListAllAnimesDomain, ListAllAnimesDomain>();
+            services.AddSingleton<IAnimeApplication, AnimeApplication>();
             #endregion
         }
 

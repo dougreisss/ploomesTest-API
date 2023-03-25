@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ploomesTest.Domain.Models
+namespace ploomesTest.Application.ViewModels
 {
-    public class SeasonDomain
+    public class vmSeason
     {
         public int SeasonId { get; set; }
         public string SeasonName { get; set; }
