@@ -29,7 +29,7 @@ namespace ploomesTest.WebApi.Controllers
             {
                 var lstStudio = _studioApplication.ListAllStudio();
 
-                if (lstStudio == null || lstStudio.Count() < 0)
+                if (lstStudio == null || lstStudio.Count() <= 0)
                 {
                     result.friendlyErrorMessage = $"Não foi encontrado nenhum registro!";
                     return NotFound(result);

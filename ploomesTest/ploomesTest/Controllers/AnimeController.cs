@@ -31,7 +31,7 @@ namespace ploomesTest.WebApi.Controllers
 
                 if (lstAllAnimes == null || lstAllAnimes.Count() <= 0)
                 {
-                    result.friendlyErrorMessage = $"Não foi encontrado nenhum registro";
+                    result.friendlyErrorMessage = "Não foi encontrado nenhum registro";
                     return NotFound(result);
                 }
 

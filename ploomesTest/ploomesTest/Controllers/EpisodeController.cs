@@ -29,7 +29,7 @@ namespace ploomesTest.WebApi.Controllers
             {
                 var lstEpisode = _episodeApplication.ListEpisodeByAnimeId(animeId);
 
-                if (lstEpisode == null || lstEpisode.Count() < 0)
+                if (lstEpisode == null || lstEpisode.Count() <= 0)
                 {
                     result.friendlyErrorMessage = $"Não foi encontrado nenhum registro com este id ({animeId})";
                     return NotFound(result);
