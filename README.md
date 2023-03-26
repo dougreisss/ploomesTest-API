@@ -190,7 +190,9 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 | 400    | Bad Request | Bad Request | vmResult |
 
 #### `DELETE /api​/Anime​/DeletarAnime`
-*Deleta o anime pelo seu id.*
+*Deletar o anime pelo seu id.*
+
+> Body Parameter
 
 | Name     | In    | Type           | Description                                                                                   |
 | -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
@@ -213,6 +215,278 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 | ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
 | 200    | OK     | Success     | vmResult       |
 | 400    | Bad Request | Bad Request | vmResult |
+
+## Episode
+#### `GET /api/Episode/ListEpisodeByAnimeId`
+*Listar um episódio pelo id do anime.*
+
+>Body parameter
+
+| Name     | In    | Type           | Description                                                                                   |
+| -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
+| AnimeId     | query | integer(int32) |  Id do anime.                                                                              |
+                                                                           
+
+*Exemplo de retorno:*
+>Status code: 200
+
+```json
+{
+  "data": [
+    {
+      "episodeId": 3,
+      "animeId": 1,
+      "episodeName": "T01 E01 · Despedida x e x Amigos",
+      "episodeLength": "00:20:00",
+      "episodeSynopsis": "Para realizar o Exame Hunter e seguir os passos de seu pai, o garoto Gon precisa antes cumprir a promessa que fez a Mito, a mulher que o criou.",
+      "episodeRealease": "2011-10-02T00:00:00",
+      "seasonId": 1
+    },
+    {
+      "episodeId": 4,
+      "animeId": 1,
+      "episodeName": "T01 E02 · O Teste x dos x Testes",
+      "episodeLength": "00:20:00",
+      "episodeSynopsis": "Ao pegar um atalho para o local do Exame, Gon, Leorio e Kurapika encontram umas velhinhas que só permitirão que eles passem se responderem corretamente a uma pergunta.",
+      "episodeRealease": "2011-10-09T00:00:00",
+      "seasonId": 1
+    }
+  ],
+  "friendlyErrorMessage": null,
+  "message": null,
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+#### `POST /api/Episode/InsertEpisode`
+*Inserir um episódio para um anime.*
+
+>Body parameter
+
+```json
+{
+  "animeId": 4,
+  "episodeName": "teste",
+  "episodeLength": "10:00",
+  "episodeSynopsis": "teste",
+  "episodeRealease": "2023-03-26T23:24:31.272Z",
+  "seasonId": 1
+}
+```
+
+*Exemplo de retorno:*
+>Status code: 200
+
+```json
+{
+  "data": {
+    "animeId": 1,
+    "episodeName": "teste",
+    "episodeLength": "10:00",
+    "episodeSynopsis": "teste",
+    "episodeRealease": "2023-03-26T23:24:31.272Z",
+    "seasonId": 1
+  },
+  "friendlyErrorMessage": null,
+  "message": "Registro inserido com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+#### `PUT /api/Episode/UpdateEpisode`
+*Atualizar algum campo do episódio*
+
+>Body parameter
+
+```json
+{
+  "episodeId": 8,
+  "animeId": 1,
+  "episodeName": "teste",
+  "episodeLength": "20:00",
+  "episodeSynopsis": "teste",
+  "episodeRealease": "2023-03-26T23:39:05.624Z",
+  "seasonId": 1
+}
+```
+
+*Exemplo de retorno:*
+>Status code: 200
+
+```json
+{
+  "data": {
+    "episodeId": 8,
+    "animeId": 1,
+    "episodeName": "teste",
+    "episodeLength": "20:00",
+    "episodeSynopsis": "teste",
+    "episodeRealease": "2023-03-26T23:39:05.624Z",
+    "seasonId": 1
+  },
+  "friendlyErrorMessage": null,
+  "message": "Registro atualizado com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+#### `DELETE /api/Episode/DeleteEpisode`
+*Deletar um episódio pelo id do episódio e o id do anime*
+
+>Body parameter
+
+| Name     | In    | Type           | Description                                                                                   |
+| -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
+| EpisodeId     | query | integer(int32) |  Id do episódio.|
+| AnimeId     | query | integer(int32) |  Id do anime.| 
+
+*Exemplo de retorno:*
+>Status code: 200
+
+```json
+{
+  "data": null,
+  "friendlyErrorMessage": null,
+  "message": "Registro deletado com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+## Genre
+#### `GET /api/Genre/ListGenreByAnimeId`
+*Listar todos os gêneros pelo anime id*
+
+>Body parameter
+
+| Name     | In    | Type           | Description                                                                                   |
+| -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
+| AnimeId     | query | integer(int32) |  Id do anime.| 
+
+*Exemplo de retorno:*
+>Status code: 200
+
+```json
+{
+  "data": [
+    {
+      "genreId": 1,
+      "genreName": "Aventura"
+    },
+    {
+      "genreId": 2,
+      "genreName": "Fantasia"
+    },
+    {
+      "genreId": 3,
+      "genreName": "Arte Marciais"
+    },
+    {
+      "genreId": 7,
+      "genreName": "teste"
+    }
+  ],
+  "friendlyErrorMessage": null,
+  "message": null,
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+#### `GET /api/Genre/ListAllGenre`
+*Listar todos os gêneros*
+> Body parameter - No parameter
+
+*Exemplo de retorno:*
+>Status code: 200
+
+```json
+{
+  "data": [
+    {
+      "genreId": 1,
+      "genreName": "Aventura"
+    },
+    {
+      "genreId": 2,
+      "genreName": "Fantasia"
+    },
+    {
+      "genreId": 3,
+      "genreName": "Arte Marciais"
+    },
+    {
+      "genreId": 7,
+      "genreName": "teste"
+    }
+  ],
+  "friendlyErrorMessage": null,
+  "message": null,
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+#### `PUT /api/Genre/UpdateGenre`
+*Atualizar algum campo do gênero*
+
+>Body parameter
+```json
+{
+  "genreId": 1,
+  "genreName": "Drama"
+}
+```
+
+*Exemplo de retorno:*
+>Status code: 200
+
+```json
+{
+  "data": {
+    "genreId": 7,
+    "genreName": "teste2"
+  },
+  "friendlyErrorMessage": null,
+  "message": "Registro atualizado com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+
+
 
 
 
