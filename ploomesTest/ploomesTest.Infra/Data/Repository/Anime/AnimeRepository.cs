@@ -14,6 +14,18 @@ namespace ploomesTest.Infra.Data.Repository
     {
         private readonly EnviromentDatabase environment = EnviromentDatabase.AMN;
 
+        public bool DeleteAnime(int animeId)
+        {
+            DbConfigRepository dbConfig = new DbConfigRepository();
+            int ret = dbConfig.ExecuteNonQuery(environment, "AMN.spDELAnime", new {
+            
+                AnimeId = animeId
+
+            });
+
+            return ret > 0 ? true : false;
+        }
+
         public bool InsertAnime(AnimeDomain animeDomain)
         {
             DbConfigRepository dbConfig = new DbConfigRepository();

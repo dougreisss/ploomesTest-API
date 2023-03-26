@@ -16,18 +16,26 @@ namespace ploomesTest.Application.Services
         private readonly IListAllAnimesByIdDomain _listAllAnimesByIdDomain;
         private readonly IInsertAnimeDomain _insertAnimeDomain;
         private readonly IUpdateAnimeDomain _updateAnimeDomain;
+        private readonly IDeleteAnimeDomain _deleteAnimeDomain;
 
         public AnimeApplication(
             IListAllAnimesDomain listAllAnimesDomain,
             IListAllAnimesByIdDomain listAllAnimesByIdDomain,
             IInsertAnimeDomain insertAnimeDomain,
-            IUpdateAnimeDomain updateAnimeDomain
+            IUpdateAnimeDomain updateAnimeDomain,
+            IDeleteAnimeDomain deleteAnimeDomain
             )
         {
             _listAllAnimesDomain = listAllAnimesDomain;
             _listAllAnimesByIdDomain = listAllAnimesByIdDomain;
             _insertAnimeDomain = insertAnimeDomain;
             _updateAnimeDomain = updateAnimeDomain;
+            _deleteAnimeDomain = deleteAnimeDomain;
+        }
+
+        public bool DeleteAnime(int animeId)
+        {
+            return _deleteAnimeDomain.DeleteAnime(animeId);
         }
 
         public bool InsertAnime(vmAnime vmAnime)

@@ -127,5 +127,30 @@ namespace ploomesTest.WebApi.Controllers
             }
         }
 
+        [HttpDelete("DeleteAnime")]
+        [Produces("application/json")]
+        public IActionResult DeleteAnime(int animeId)
+        {
+            vmResult result = new vmResult();
+
+            try
+            {
+                if (!_animeApplication.DeleteAnime(animeId))
+                {
+                    result.friendlyErrorMessage = "Não foi possível atualizar este registro";
+                    return BadRequest(result);
+                }
+
+                result.message = "Registro deletado com sucesso!";
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                result.friendlyErrorMessage = "Houve um erro";
+                result.stackTrace = ex.Message + "/n" + ex.StackTrace;
+                return BadRequest(result);
+            }
+        }
+
     }
 }
