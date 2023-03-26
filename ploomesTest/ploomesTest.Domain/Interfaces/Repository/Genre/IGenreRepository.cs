@@ -13,5 +13,6 @@ namespace ploomesTest.Domain.Interfaces.Repository
         public List<GenreDomain> ListAllGenre();
         public bool UpdateGenre(GenreDomain genreDomain);
         public bool InsertGenre(GenreDomain genreDomain);
+        public bool DeleteGenre(int genreId);
     }
 }

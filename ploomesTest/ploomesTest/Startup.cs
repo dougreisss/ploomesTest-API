@@ -9,6 +9,7 @@ using ploomesTest.Application.Services;
 using ploomesTest.Domain.Interfaces.Command;
 using ploomesTest.Domain.Interfaces.Command.Anime;
 using ploomesTest.Domain.Interfaces.Command.Episode;
+using ploomesTest.Domain.Interfaces.Command.Genre;
 using ploomesTest.Domain.Interfaces.Command.Season;
 using ploomesTest.Domain.Interfaces.Command.Studio;
 using ploomesTest.Domain.Interfaces.Repository;
@@ -19,6 +20,7 @@ using ploomesTest.Domain.Interfaces.Repository.Studio;
 using ploomesTest.Domain.Services;
 using ploomesTest.Domain.Services.Anime;
 using ploomesTest.Domain.Services.Episode;
+using ploomesTest.Domain.Services.Genre;
 using ploomesTest.Domain.Services.Season;
 using ploomesTest.Domain.Services.Studio;
 using ploomesTest.Infra.Data.Repository;
@@ -78,6 +80,7 @@ namespace ploomesTest
             services.AddSingleton<IListAllSeasonDomain, ListAllSeasonDomain>();
             services.AddSingleton<IDeleteEpisodeDomain, DeleteEpisodeDomain>();
             services.AddSingleton<IDeleteAnimeDomain, DeleteAnimeDomain>();
+            services.AddSingleton<IDeleteGenreDomain, DeleteGenreDomain>();
             #endregion
         }
 

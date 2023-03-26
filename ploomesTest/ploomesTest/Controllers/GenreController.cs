@@ -129,5 +129,29 @@ namespace ploomesTest.WebApi.Controllers
             }
         }
 
+        [HttpDelete("DeleteGenre")]
+        [Produces("application/json")]
+        public IActionResult DeleteGenre(int genreId)
+        {
+            vmResult result = new vmResult();
+
+            try
+            {
+                if (!_genreApplication.DeleteGenre(genreId))
+                {
+                    result.friendlyErrorMessage = "Não foi possivel deletar este registro";
+                    return BadRequest(result);
+                }
+
+                result.message = "Registro deletado com sucesso!";
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                result.friendlyErrorMessage = "Houve um erro";
+                result.stackTrace = ex.Message + "/n" + ex.StackTrace;
+                return BadRequest(result);
+            }
+        }
     }
 }

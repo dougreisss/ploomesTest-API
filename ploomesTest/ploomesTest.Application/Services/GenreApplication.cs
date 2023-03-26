@@ -1,6 +1,7 @@
 ﻿using ploomesTest.Application.Interfaces;
 using ploomesTest.Application.ViewModels;
 using ploomesTest.Domain.Interfaces.Command;
+using ploomesTest.Domain.Interfaces.Command.Genre;
 using ploomesTest.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -16,18 +17,26 @@ namespace ploomesTest.Application.Services
         private readonly IListAllGenreDomain _listAllGenreDomain;
         private readonly IUpdateGenreDomain _updateGenreDomain;
         private readonly IInsertGenreDomain _insertGenreDomain;
+        private readonly IDeleteGenreDomain _deleteGenreDomain;
 
         public GenreApplication(
             IListGenreByAnimeIdDomain listGenreByAnimeId, 
             IListAllGenreDomain listAllGenreDomain,
             IUpdateGenreDomain updateGenreDomain,
-            IInsertGenreDomain insertGenreDomain
+            IInsertGenreDomain insertGenreDomain,
+            IDeleteGenreDomain deleteGenreDomain
         )
         {
             _listGenreByAnimeIdDomain = listGenreByAnimeId;
             _listAllGenreDomain = listAllGenreDomain;
             _updateGenreDomain = updateGenreDomain;
             _insertGenreDomain = insertGenreDomain;
+            _deleteGenreDomain = deleteGenreDomain;
+        }
+
+        public bool DeleteGenre(int genreId)
+        {
+            return _deleteGenreDomain.DeleteGenre(genreId);
         }
 
         public bool InsertGenre(vmGenre vmGenre)
