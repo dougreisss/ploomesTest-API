@@ -1,6 +1,6 @@
 use prjAnime
 go
-create or alter procedure AMN.spLSTAllAnimesByAnimeIdAndEpisodeId 2, 12
+create or alter procedure AMN.spLSTAllAnimesByAnimeIdAndEpisodeId 
 @AnimeId int,
 @EpisodeId int
 as

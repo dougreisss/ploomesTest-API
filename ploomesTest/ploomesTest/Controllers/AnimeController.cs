@@ -56,9 +56,9 @@ namespace ploomesTest.WebApi.Controllers
             {
                 var lstAllAnime = _animeApplication.ListAllAnimesById(animeId, episodeId);
 
-                if (lstAllAnime == null)
+                if (lstAllAnime == null || lstAllAnime.AnimeId <= 0)
                 {
-                    result.friendlyErrorMessage = $"Não foi encontrado nenhum registro";
+                    result.friendlyErrorMessage = "Não foi encontrado nenhum registro";
                     return NotFound(result);
                 }
 

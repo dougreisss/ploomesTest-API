@@ -1,0 +1,15 @@
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\bin\Release\net5.0\ploomesTest.Infra.deps.json
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\bin\Release\net5.0\ploomesTest.Infra.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\bin\Release\net5.0\ref\ploomesTest.Infra.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\bin\Release\net5.0\ploomesTest.Infra.pdb
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\bin\Release\net5.0\ploomesTest.Domain.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\bin\Release\net5.0\ploomesTest.Domain.pdb
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\obj\Release\net5.0\ploomesTest.Infra.csproj.AssemblyReference.cache
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\obj\Release\net5.0\ploomesTest.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\obj\Release\net5.0\ploomesTest.Infra.AssemblyInfoInputs.cache
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\obj\Release\net5.0\ploomesTest.Infra.AssemblyInfo.cs
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\obj\Release\net5.0\ploomesTest.Infra.csproj.CoreCompileInputs.cache
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\obj\Release\net5.0\ploomesTest.Infra.csproj.CopyComplete
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\obj\Release\net5.0\ploomesTest.Infra.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\obj\Release\net5.0\ref\ploomesTest.Infra.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Infra\obj\Release\net5.0\ploomesTest.Infra.pdb

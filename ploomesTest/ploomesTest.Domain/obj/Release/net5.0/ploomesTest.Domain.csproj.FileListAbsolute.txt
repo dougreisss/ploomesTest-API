@@ -1,0 +1,12 @@
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\bin\Release\net5.0\ploomesTest.Domain.deps.json
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\bin\Release\net5.0\ploomesTest.Domain.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\bin\Release\net5.0\ref\ploomesTest.Domain.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\bin\Release\net5.0\ploomesTest.Domain.pdb
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\obj\Release\net5.0\ploomesTest.Domain.csproj.AssemblyReference.cache
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\obj\Release\net5.0\ploomesTest.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\obj\Release\net5.0\ploomesTest.Domain.AssemblyInfoInputs.cache
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\obj\Release\net5.0\ploomesTest.Domain.AssemblyInfo.cs
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\obj\Release\net5.0\ploomesTest.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\obj\Release\net5.0\ploomesTest.Domain.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\obj\Release\net5.0\ref\ploomesTest.Domain.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Domain\obj\Release\net5.0\ploomesTest.Domain.pdb

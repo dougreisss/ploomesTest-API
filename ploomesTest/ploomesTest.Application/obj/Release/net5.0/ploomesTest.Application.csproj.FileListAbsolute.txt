@@ -1,0 +1,17 @@
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\bin\Release\net5.0\ploomesTest.Application.deps.json
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\bin\Release\net5.0\ploomesTest.Application.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\bin\Release\net5.0\ref\ploomesTest.Application.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\bin\Release\net5.0\ploomesTest.Application.pdb
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\bin\Release\net5.0\ploomesTest.Domain.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\bin\Release\net5.0\ploomesTest.Infra.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\bin\Release\net5.0\ploomesTest.Domain.pdb
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\bin\Release\net5.0\ploomesTest.Infra.pdb
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\obj\Release\net5.0\ploomesTest.Application.csproj.AssemblyReference.cache
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\obj\Release\net5.0\ploomesTest.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\obj\Release\net5.0\ploomesTest.Application.AssemblyInfoInputs.cache
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\obj\Release\net5.0\ploomesTest.Application.AssemblyInfo.cs
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\obj\Release\net5.0\ploomesTest.Application.csproj.CoreCompileInputs.cache
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\obj\Release\net5.0\ploomesTest.Application.csproj.CopyComplete
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\obj\Release\net5.0\ploomesTest.Application.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\obj\Release\net5.0\ref\ploomesTest.Application.dll
+C:\Users\Dougl\Documents\Estudo\ploomes\ploomesTest\ploomesTest.Application\obj\Release\net5.0\ploomesTest.Application.pdb
