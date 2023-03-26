@@ -13,5 +13,6 @@ namespace ploomesTest.Application.Interfaces
         public List<vmSeason> ListAllSeason();
         public bool InsertSeason(vmSeason vmSeason);
         public bool UpdateSeason(vmSeason vmSeason);
+        public bool DeleteSeason(int seasonId);
     }
 }

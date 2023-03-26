@@ -14,6 +14,18 @@ namespace ploomesTest.Infra.Data.Repository.Season
     {
         private readonly EnviromentDatabase environment = EnviromentDatabase.AMN;
 
+        public bool DeleteSeason(int seasonId)
+        {
+            DbConfigRepository dbConfig = new DbConfigRepository();
+            int ret = dbConfig.ExecuteNonQuery(environment, "AMN.spDELSeason", new { 
+            
+                SeasonId = seasonId
+
+            });
+
+            return ret > 0 ? true : false;
+        }
+
         public bool InsertSeason(SeasonDomain seasonDomain)
         {
             DbConfigRepository dbConfig = new DbConfigRepository();

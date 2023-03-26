@@ -12,5 +12,6 @@ namespace ploomesTest.Domain.Interfaces.Repository.Studio
         public List<StudioDomain> ListAllStudio();
         public bool InsertStudio(StudioDomain studioDomain);
         public bool UpdateStudio(StudioDomain studioDomain);
+        public bool DeleteStudio(int studioId);
     }
 }

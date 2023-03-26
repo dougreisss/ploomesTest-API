@@ -14,6 +14,18 @@ namespace ploomesTest.Infra.Data.Repository.Studio
     {
         private readonly EnviromentDatabase environment = EnviromentDatabase.AMN;
 
+        public bool DeleteStudio(int studioId)
+        {
+            DbConfigRepository dbConfig = new DbConfigRepository();
+            int ret = dbConfig.ExecuteNonQuery(environment, "AMN.spDELStudio", new {
+
+                StudioId = studioId
+
+            });
+
+            return ret > 0 ? true : false;
+        }
+
         public bool InsertStudio(StudioDomain studioDomain)
         {
             DbConfigRepository dbConfig = new DbConfigRepository();

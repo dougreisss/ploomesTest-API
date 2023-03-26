@@ -15,16 +15,24 @@ namespace ploomesTest.Application.Services
         private readonly IListAllStudioDomain _listAllStudioDomain;
         private readonly IInsertStudioDomain _insertStudioDomain;
         private readonly IUpdateStudioDomain _updateStudioDomain;
+        private readonly IDeleteStudioDomain _deleteStudioDomain;
 
         public StudioApplication(
             IListAllStudioDomain listAllStudioDomain,
             IInsertStudioDomain insertStudioDomain,
-            IUpdateStudioDomain updateStudioDomain
+            IUpdateStudioDomain updateStudioDomain,
+            IDeleteStudioDomain deleteStudioDomain
         )
         {
             _listAllStudioDomain = listAllStudioDomain;
             _insertStudioDomain = insertStudioDomain;
             _updateStudioDomain = updateStudioDomain;
+            _deleteStudioDomain = deleteStudioDomain;
+        }
+
+        public bool DeleteStudio(int studioId)
+        {
+            return _deleteStudioDomain.DeleteStudio(studioId);
         }
 
         public bool InsertStudio(vmStudio studio)

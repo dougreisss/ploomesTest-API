@@ -13,5 +13,6 @@ namespace ploomesTest.Domain.Interfaces.Repository.Season
         public List<SeasonDomain> ListAllSeason();
         public bool InsertSeason(SeasonDomain seasonDomain);
         public bool UpdateSeason(SeasonDomain seasonDomain);
+        public bool DeleteSeason(int seasonId);
     }
 }

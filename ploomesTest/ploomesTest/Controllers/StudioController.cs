@@ -98,5 +98,30 @@ namespace ploomesTest.WebApi.Controllers
                 return BadRequest(result);
             }
         }
+
+        [HttpDelete("DeleteStudio")]
+        [Produces("application/json")]
+        public IActionResult DeleteStudio(int studioId)
+        {
+            vmResult result = new vmResult();
+
+            try
+            {
+                if (!_studioApplication.DeleteStudio(studioId))
+                {
+                    result.friendlyErrorMessage = "Não foi possivel deletar este registro";
+                    return BadRequest(result);
+                }
+
+                result.message = "Registro deletado com sucesso!";
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                result.friendlyErrorMessage = "Houve um erro";
+                result.stackTrace = ex.Message + "/n" + ex.StackTrace;
+                return BadRequest(result);
+            }
+        }
     }
 }

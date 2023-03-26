@@ -17,18 +17,26 @@ namespace ploomesTest.Application.Services
         private readonly IInsertSeasonDomain _insertSeasonDomain;
         private readonly IUpdateSeasonDomain _updateSeasonDomain;
         private readonly IListAllSeasonDomain _listAllSeasonDomain;
+        private readonly IDeleteSeasonDomain _deleteSeasonDomain;
 
         public SeasonApplication(
             IListSeasonByAnimeIdDomain listSeasonByAnimeIdDomain,
             IInsertSeasonDomain insertSeasonDomain,
             IUpdateSeasonDomain updateSeasonDomain,
-            IListAllSeasonDomain listAllSeasonDomain
+            IListAllSeasonDomain listAllSeasonDomain,
+            IDeleteSeasonDomain deleteSeasonDomain
         )
         {
             _listSeasonByAnimeIdDomain = listSeasonByAnimeIdDomain;
             _insertSeasonDomain = insertSeasonDomain;
             _updateSeasonDomain = updateSeasonDomain;
             _listAllSeasonDomain = listAllSeasonDomain;
+            _deleteSeasonDomain = deleteSeasonDomain;
+        }
+
+        public bool DeleteSeason(int seasonId)
+        {
+            return _deleteSeasonDomain.DeleteSeason(seasonId);
         }
 
         public bool InsertSeason(vmSeason vmSeason)
