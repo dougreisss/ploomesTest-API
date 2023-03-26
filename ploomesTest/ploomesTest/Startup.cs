@@ -76,6 +76,7 @@ namespace ploomesTest
             services.AddSingleton<IInsertSeasonDomain, InsertSeasonDomain>();
             services.AddSingleton<IUpdateSeasonDomain, UpdateSeasonDomain>();
             services.AddSingleton<IListAllSeasonDomain, ListAllSeasonDomain>();
+            services.AddSingleton<IDeleteEpisodeDomain, DeleteEpisodeDomain>();
             #endregion
         }
 

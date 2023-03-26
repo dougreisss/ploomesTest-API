@@ -15,15 +15,24 @@ namespace ploomesTest.Application.Services
         private readonly IListEpisodeByAnimeIdDomain _listEpisodeByAnimeIdDomain;
         private readonly IInsertEpisodeDomain _insertEpisodeDomain;
         private readonly IUpdateEpisodeDomain _updateEpisodeDomain;
+        private readonly IDeleteEpisodeDomain _deleteEpisodeDomain;
+
         public EpisodeApplication(
             IListEpisodeByAnimeIdDomain listEpisodeByAnimeIdDomain,
             IInsertEpisodeDomain insertEpisodeDomain,
-            IUpdateEpisodeDomain updateEpisodeDomain
+            IUpdateEpisodeDomain updateEpisodeDomain,
+            IDeleteEpisodeDomain deleteEpisodeDomain
         ) 
         {
             _listEpisodeByAnimeIdDomain = listEpisodeByAnimeIdDomain;
             _insertEpisodeDomain = insertEpisodeDomain;
             _updateEpisodeDomain = updateEpisodeDomain;
+            _deleteEpisodeDomain = deleteEpisodeDomain;
+        }
+
+        public bool DeleteEpisode(int episodeId, int animeId)
+        {
+            return _deleteEpisodeDomain.DeleteEpisode(episodeId, animeId);
         }
 
         public bool InsertEpisode(vmEpisode episode)

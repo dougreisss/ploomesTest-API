@@ -12,5 +12,6 @@ namespace ploomesTest.Domain.Interfaces.Repository.Episode
         public List<EpisodeDomain> ListEpisodeByAnimeId(int animeId);
         public bool InsertEpisode(EpisodeDomain episodeDomain);
         public bool UpdateEpisode(EpisodeDomain episodeDomain);
+        public bool DeleteEpisode(int episodeId, int animeId);
     }
 }
