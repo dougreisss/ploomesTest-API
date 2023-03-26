@@ -35,7 +35,7 @@ namespace ploomesTest.Application.Services
             return _deleteEpisodeDomain.DeleteEpisode(episodeId, animeId);
         }
 
-        public bool InsertEpisode(vmEpisode episode)
+        public bool InsertEpisode(vmInsertEpisode episode)
         {
             return _insertEpisodeDomain.InsertEpisode(Read<EpisodeDomain>(episode));
         }

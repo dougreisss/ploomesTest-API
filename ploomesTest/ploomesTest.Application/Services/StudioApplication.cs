@@ -35,7 +35,7 @@ namespace ploomesTest.Application.Services
             return _deleteStudioDomain.DeleteStudio(studioId);
         }
 
-        public bool InsertStudio(vmStudio studio)
+        public bool InsertStudio(vmInsertStudio studio)
         {
             return _insertStudioDomain.InsertStudio(Read<StudioDomain>(studio));
         }

@@ -48,7 +48,7 @@ namespace ploomesTest.WebApi.Controllers
 
         [HttpPost("InsertStudio")]
         [Produces("application/json")]
-        public IActionResult InsertStudio(vmStudio vmStudio)
+        public IActionResult InsertStudio(vmInsertStudio vmStudio)
         {
             vmResult result = new vmResult();
 

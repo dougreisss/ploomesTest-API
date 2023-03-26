@@ -10,7 +10,7 @@ namespace ploomesTest.Application.Interfaces
     public interface IEpisodeApplication
     {
         public List<vmEpisode> ListEpisodeByAnimeId(int animeId);
-        public bool InsertEpisode(vmEpisode episode);
+        public bool InsertEpisode(vmInsertEpisode episode);
         public bool UpdateEpisode(vmEpisode episode);
         public bool DeleteEpisode(int episodeId, int animeId);
     }

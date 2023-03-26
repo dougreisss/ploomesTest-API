@@ -77,7 +77,7 @@ namespace ploomesTest.WebApi.Controllers
 
         [HttpPost("InsertSeason")]
         [Produces("application/json")]
-        public IActionResult InsertSeason(vmSeason vmSeason)
+        public IActionResult InsertSeason(vmInsertSeason vmSeason)
         {
             vmResult result = new vmResult();
 

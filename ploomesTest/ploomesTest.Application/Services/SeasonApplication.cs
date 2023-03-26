@@ -39,7 +39,7 @@ namespace ploomesTest.Application.Services
             return _deleteSeasonDomain.DeleteSeason(seasonId);
         }
 
-        public bool InsertSeason(vmSeason vmSeason)
+        public bool InsertSeason(vmInsertSeason vmSeason)
         {
             return _insertSeasonDomain.InsertSeason(Read<SeasonDomain>(vmSeason));
         }

@@ -77,7 +77,7 @@ namespace ploomesTest.WebApi.Controllers
 
         [HttpPost("InsertAnime")]
         [Produces("application/json")]
-        public IActionResult InsertAnime(vmAnime vmAnime)
+        public IActionResult InsertAnime(vmInsertAnime vmAnime)
         {
             vmResult result = new vmResult();
 

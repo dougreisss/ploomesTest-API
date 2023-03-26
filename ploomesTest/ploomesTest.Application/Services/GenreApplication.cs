@@ -39,7 +39,7 @@ namespace ploomesTest.Application.Services
             return _deleteGenreDomain.DeleteGenre(genreId);
         }
 
-        public bool InsertGenre(vmGenre vmGenre)
+        public bool InsertGenre(vmInsertGenre vmGenre)
         {
             return _insertGenreDomain.InsertGenre(Read<GenreDomain>(vmGenre));
         }

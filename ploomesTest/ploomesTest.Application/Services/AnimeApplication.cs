@@ -41,7 +41,7 @@ namespace ploomesTest.Application.Services
             return _deleteAnimeDomain.DeleteAnime(animeId);
         }
 
-        public bool InsertAnime(vmAnime vmAnime)
+        public bool InsertAnime(vmInsertAnime vmAnime)
         {
             return _insertAnimeDomain.InsertAnime(Read<AnimeDomain>(vmAnime));
         }

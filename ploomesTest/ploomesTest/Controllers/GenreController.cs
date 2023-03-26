@@ -104,7 +104,7 @@ namespace ploomesTest.WebApi.Controllers
 
         [HttpPost("InsertGenre")]
         [Produces("application/json")]
-        public IActionResult InsertGenre(vmGenre vmGenre)
+        public IActionResult InsertGenre(vmInsertGenre vmGenre)
         {
             vmResult result = new vmResult();
 

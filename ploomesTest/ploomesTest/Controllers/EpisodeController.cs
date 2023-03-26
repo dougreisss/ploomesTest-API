@@ -49,7 +49,7 @@ namespace ploomesTest.WebApi.Controllers
 
         [HttpPost("InsertEpisode")]
         [Produces("application/json")]
-        public IActionResult InsertEpisode(vmEpisode episode)
+        public IActionResult InsertEpisode(vmInsertEpisode episode)
         {
             vmResult result = new vmResult();
 

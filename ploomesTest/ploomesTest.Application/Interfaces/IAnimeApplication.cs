@@ -11,7 +11,7 @@ namespace ploomesTest.Application.Interfaces
     {
         public List<vmAllAnimes> ListAllAnimes();
         public vmAllAnimes ListAllAnimesById(int animeId, int episodeId);
-        public bool InsertAnime(vmAnime vmAnime);
+        public bool InsertAnime(vmInsertAnime vmAnime);
         public bool InsertAnimeGenre(int animeId, int genreId);
         public bool UpdateAnime(vmAnime vmAnime);
         public bool DeleteAnime(int animeId);

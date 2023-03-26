@@ -10,7 +10,7 @@ namespace ploomesTest.Application.Interfaces
     public interface IStudioApplication
     {
         public List<vmStudio> ListAllStudio();
-        public bool InsertStudio(vmStudio studio);
+        public bool InsertStudio(vmInsertStudio studio);
         public bool UpdateStudio(vmStudio studio);
         public bool DeleteStudio(int studioId);
     }
