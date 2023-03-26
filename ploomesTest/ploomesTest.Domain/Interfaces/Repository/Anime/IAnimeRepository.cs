@@ -14,5 +14,6 @@ namespace ploomesTest.Domain.Interfaces.Repository.Anime
         public bool InsertAnime(AnimeDomain animeDomain);
         public bool UpdateAnime(AnimeDomain animeDomain);
         public bool DeleteAnime(int animeId);
+        public bool InsertAnimeGenre(int animeId, int genreId);
     }
 }

@@ -101,6 +101,31 @@ namespace ploomesTest.WebApi.Controllers
             }
         }
 
+
+        [HttpPost("InsertAnimeGenre")]
+        [Produces("application/json")]
+        public IActionResult InsertAnimeGenre(int animeId, int genreId)
+        {
+            vmResult result = new vmResult();
+
+            try
+            {
+                if (!_animeApplication.InsertAnimeGenre(animeId, genreId))
+                {
+                    result.friendlyErrorMessage = "Não foi possivel inserir este registro!";
+                    return BadRequest(result);
+                }
+
+                result.message = "Registro inserido com sucesso!";
+                return Created("teste", result);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         [HttpPut("UpdateAnime")]
         [Produces("application/json")]
         public IActionResult UpdateAnime(vmAnime vmAnime)
@@ -151,6 +176,6 @@ namespace ploomesTest.WebApi.Controllers
                 return BadRequest(result);
             }
         }
-
+            
     }
 }

@@ -83,6 +83,7 @@ namespace ploomesTest
             services.AddSingleton<IDeleteGenreDomain, DeleteGenreDomain>();
             services.AddSingleton<IDeleteSeasonDomain, DeleteSeasonDomain>();
             services.AddSingleton<IDeleteStudioDomain, DeleteStudioDomain>();
+            services.AddSingleton<IInsertAnimeGenreDomain, InsertAnimeGenreDomain>();
             #endregion
         }
 

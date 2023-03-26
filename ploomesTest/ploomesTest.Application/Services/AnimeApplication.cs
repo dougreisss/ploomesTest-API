@@ -17,13 +17,15 @@ namespace ploomesTest.Application.Services
         private readonly IInsertAnimeDomain _insertAnimeDomain;
         private readonly IUpdateAnimeDomain _updateAnimeDomain;
         private readonly IDeleteAnimeDomain _deleteAnimeDomain;
+        private readonly IInsertAnimeGenreDomain _insertAnimeGenreDomain;
 
         public AnimeApplication(
             IListAllAnimesDomain listAllAnimesDomain,
             IListAllAnimesByIdDomain listAllAnimesByIdDomain,
             IInsertAnimeDomain insertAnimeDomain,
             IUpdateAnimeDomain updateAnimeDomain,
-            IDeleteAnimeDomain deleteAnimeDomain
+            IDeleteAnimeDomain deleteAnimeDomain,
+            IInsertAnimeGenreDomain insertAnimeGenreDomain
             )
         {
             _listAllAnimesDomain = listAllAnimesDomain;
@@ -31,6 +33,7 @@ namespace ploomesTest.Application.Services
             _insertAnimeDomain = insertAnimeDomain;
             _updateAnimeDomain = updateAnimeDomain;
             _deleteAnimeDomain = deleteAnimeDomain;
+            _insertAnimeGenreDomain = insertAnimeGenreDomain;
         }
 
         public bool DeleteAnime(int animeId)
@@ -41,6 +44,11 @@ namespace ploomesTest.Application.Services
         public bool InsertAnime(vmAnime vmAnime)
         {
             return _insertAnimeDomain.InsertAnime(Read<AnimeDomain>(vmAnime));
+        }
+
+        public bool InsertAnimeGenre(int animeId, int genreId)
+        {
+            return _insertAnimeGenreDomain.InsertAnimeGenre(animeId, genreId);
         }
 
         public List<vmAllAnimes> ListAllAnimes()

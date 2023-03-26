@@ -42,6 +42,19 @@ namespace ploomesTest.Infra.Data.Repository
             return ret > 0 ? true : false;
         }
 
+        public bool InsertAnimeGenre(int animeId, int genreId)
+        {
+            DbConfigRepository dbConfig = new DbConfigRepository();
+            int ret = dbConfig.ExecuteNonQuery(environment, "AMN.spINSAnimeGenre", new {
+            
+                AnimeId = animeId,
+                GenreId = genreId
+
+            });
+
+            return ret > 0 ? true : false;
+        }
+
         public List<AllAnimesDomain> ListAllAnimes()
         {
             DbConfigRepository dbConfig = new DbConfigRepository();
