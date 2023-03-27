@@ -1,5 +1,5 @@
 # ploomesTest-API
->REST Api desenvolvida para teste prático onde você pode visualizar, criar, atualizar e deletar items
+>REST API desenvolvida para teste prático onde você pode visualizar, criar, atualizar e deletar items de sobre animes.
 
 Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/index.html)
 
@@ -55,7 +55,9 @@ DB Designer: [DbDesigner](https://dbdesigner.page.link/khAForA7rcX5SMnK6)
 | Name     | In    | Type           | Description                                                                                   |
 | -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
 | AnimeId     | query | integer(int32) |  Id do anime.                                                                              |
-| EpisodeId | query | integer(int32) |  Id do episódio.                                                                                |
+| EpisodeId | query | integer(int32) |  Id do episódio.            
+
+                                                                    |
 *Exemplo de retorno:*
 >Status code: 200
 ```json

@@ -3,6 +3,8 @@
     "",
     "\\ploomesTest",
     "\\ploomesTest\\ploomesTest",
+    "\\ploomesTest\\ploomesTest.Application",
+    "\\ploomesTest\\ploomesTest.Application\\ViewModels",
     "\\ploomesTest\\ploomesTest\\Controllers"
   ],
   "SelectedNode": "\\README.md",
