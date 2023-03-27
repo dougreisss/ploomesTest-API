@@ -823,5 +823,37 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 | 200    | OK     | Success     | vmResult       |
 | 400    | Bad Request | Bad Request | vmResult |
 
+# Schemas
+### vmResult
+```json
+{
+  "data": {
+    "title": "teste",
+    "originalTitle": "teste",
+    "synopsis": "teste",
+    "realeaseYear": "2023-03-26T23:01:27.968Z",
+    "studioId": 1
+  },
+  "friendlyErrorMessage": null,
+  "message": "Registro inserido com sucesso!",
+  "stackTrace": null
+}
+}
+
+```
+
+Definição da entidade de retorno.
+
+### Propriedades
+
+| Name            | Type                            | Required  | Description                                                                         |
+| --------------- | ------------------------------- | -------- | --------------------------------------------------------------------------------------- |
+| data              | object                   | true     | Objeto de retorno |
+| friendlyErrorMessage              | string                   | true     | Mensagem de erro |
+| message              | string                   | true     | Mensagem de retorno |
+| stackTrace              | string                   | true     | Mensagem de erro (Exception) |
+
+
+
 
 
