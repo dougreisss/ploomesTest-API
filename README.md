@@ -2,6 +2,9 @@
 >REST Api desenvolvida para teste prático onde você pode visualizar, criar, atualizar e deletar items
 
 Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/index.html)
+
+DB Designer: [DbDesigner](https://dbdesigner.page.link/khAForA7rcX5SMnK6)
+
 ## Anime
 #### `GET /api/Anime/ListAllAnimes`
 *Listar todos os animes.*
@@ -842,9 +845,9 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 
 ```
 
-Definição da entidade de retorno.
 
 ### Propriedades
+Definição da entidade de retorno.
 
 | Name            | Type                            | Required  | Description                                                                         |
 | --------------- | ------------------------------- | -------- | --------------------------------------------------------------------------------------- |
@@ -853,7 +856,112 @@ Definição da entidade de retorno.
 | message              | string                   | true     | Mensagem de retorno |
 | stackTrace              | string                   | true     | Mensagem de erro (Exception) |
 
+### vmAnime
 
+```json
+{
+  "id": 10
+  "title": "teste",
+  "originalTitle": "teste",
+  "synopsis": "teste",
+  "realeaseYear": "2023-03-26T23:01:27.968Z",
+  "studioId": 1
+}
+```
+
+### Propriedades
+
+Definição da entidade anime
+
+| Name            | Type                            | Required  | Description                                                                         |
+| --------------- | ------------------------------- | -------- | --------------------------------------------------------------------------------------- |
+| AnimeId              | int                   | true     | Id do anime
+| Title              | string                   | true     | Titulo do anime
+| OriginalTitle             | string                   | true     | Titulo original do anime
+| Synopsis              | string                  | true     | Sinopse do anime
+| RealeaseYear             | DateTime                   | true     | Data de lançamento do anime
+
+
+### vmEpisode 
+
+```json
+{
+  "episodeId": 8,
+  "animeId": 1,
+  "episodeName": "teste",
+  "episodeLength": "20:00",
+  "episodeSynopsis": "teste",
+  "episodeRealease": "2023-03-26T23:39:05.624Z",
+  "seasonId": 1
+}
+```
+
+### Propriedades
+
+Definição da entidade episódio
+
+| Name            | Type                            | Required  | Description                                                                         |
+| --------------- | ------------------------------- | -------- | --------------------------------------------------------------------------------------- |
+| AnimeId              | int                   | true     | Id do anime
+| EpisodeId              | int                   | true     | Id do episódio
+| EpisodeName             | string                   | true     | Titulo original do anime
+| EpisodeLength              | string                  | true     | Duração do episódio do anime
+| EpisodeSynopsis             | string                   | true     | Sinopse do episódio
+| SeasonId              | int                   | true     | Id da temporada
+
+### vmGenre
+
+```json
+{
+  "genreId": 7,
+  "genreName": "teste2"
+}
+```
+
+### Propriedades 
+
+Definição da entidade gênero
+
+| Name            | Type                            | Required  | Description                                                                         |
+| --------------- | ------------------------------- | -------- | --------------------------------------------------------------------------------------- |
+| GenreId              | int                   | true     | Id do gênero
+| GenreName              | string                   | true     | Nome do gênero
+
+### vmSeason 
+
+```json
+{
+  "seasonId": 3,
+  "seasonName": "Temporada 3"
+}
+```
+
+### Propriedades
+
+Definição da entidade de temporada.
+
+| Name            | Type                            | Required  | Description                                                                         |
+| --------------- | ------------------------------- | -------- | --------------------------------------------------------------------------------------- |
+| SeasonId              | int                   | true     | Id da temporada
+| SeasonName              | string                   | true     | Nome da temporada
+
+### vmStudio
+
+```json
+{
+  "studioId": 3,
+  "studioName": "teste2"
+}
+```
+
+### Propriedades 
+
+Definicação da entidade estúdio
+
+| Name            | Type                            | Required  | Description                                                                         |
+| --------------- | ------------------------------- | -------- | --------------------------------------------------------------------------------------- |
+| StudioId              | int                   | true     | Id do estúdio
+| StudioName              | string                   | true     | Nome do estúdio
 
 
 
