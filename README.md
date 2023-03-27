@@ -42,6 +42,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 | ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
 | 200    | OK     | Success     | vmResult       |
 | 400    | Bad Request | Bad Request | vmResult |
+| 404 | Not Found | Not Found | vmResult |
 
 #### `GET /api/Anime/ListAllAnimesById`
 *Listar anime pelo id do anime e do id do episódio.*
@@ -84,6 +85,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 | ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
 | 200    | OK     | Success     | vmResult       |
 | 400    | Bad Request | Bad Request | vmResult |
+| 404 | Not Found | Not Found | vmResult |
 
 ### `POST /api/Anime/InsertAnime`
 
@@ -120,7 +122,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 
 | Status | Meaning                                                          | Description | Schema                        |
 | ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
-| 200    | OK     | Success     | vmResult       |
+| 201    | OK     | Success     | vmResult       |
 | 400    | Bad Request | Bad Request | vmResult |
 
 #### `POST /api​/Anime​/InsertAnimeGenre`
@@ -262,6 +264,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 | ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
 | 200    | OK     | Success     | vmResult       |
 | 400    | Bad Request | Bad Request | vmResult |
+| 404 | Not Found | Not Found | vmResult |
 
 #### `POST /api/Episode/InsertEpisode`
 *Inserir um episódio para um anime.*
@@ -415,6 +418,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 | ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
 | 200    | OK     | Success     | vmResult       |
 | 400    | Bad Request | Bad Request | vmResult |
+| 404 | Not Found | Not Found | vmResult |
 
 #### `GET /api/Genre/ListAllGenre`
 *Listar todos os gêneros*
@@ -453,6 +457,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 | ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
 | 200    | OK     | Success     | vmResult       |
 | 400    | Bad Request | Bad Request | vmResult |
+| 404 | Not Found | Not Found | vmResult |
 
 #### `PUT /api/Genre/UpdateGenre`
 *Atualizar algum campo do gênero*
@@ -540,8 +545,283 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 | 200    | OK     | Success     | vmResult       |
 | 400    | Bad Request | Bad Request | vmResult |
 
+## Season 
 
+### `GET /api/Season/ListAllSeason`
+*Listar todas as temporadas*
 
+> Body parameter - No parameter
+
+*Exemplo de retorno*
+> Status code: 200
+
+```json
+{
+  "data": [
+    {
+      "seasonId": 1,
+      "seasonName": "Temporada 1"
+    },
+    {
+      "seasonId": 2,
+      "seasonName": "Temporada 1"
+    }
+  ],
+  "friendlyErrorMessage": null,
+  "message": null,
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+| 404 | Not Found | Not Found | vmResult |
+
+### `GET /api/Season/ListSeasonByAnimeId`
+*Listar temporada pelo id do anime*
+
+> Parameter 
+
+| Name     | In    | Type           | Description                                                                                   |
+| -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
+| animeId     | query | integer(int32) |  Id do anime.                                                                              |
+
+*Exemplo de retorno*
+
+>Status code: 200
+
+```json
+{
+  "data": [
+    {
+      "seasonId": 1,
+      "seasonName": "Temporada 1"
+    }
+  ],
+  "friendlyErrorMessage": null,
+  "message": null,
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+| 404 | Not Found | Not Found | vmResult |
+
+### `POST /api/Season/InsertSeason`
+*Inserir uma nova temporada*
+
+> Body parameter
+
+```json
+{
+  "seasonName": "Temporada 3"
+}
+```
+
+*Exemplo de retorno*
+
+>Status code: 200
+
+```json
+{
+  "data": {
+    "seasonName": "Temporada 3"
+  },
+  "friendlyErrorMessage": null,
+  "message": "Registro inserido com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+### `PUT /api/Season/UpdateSeason`
+*Atualizar algum campo da temporada*
+
+> Body parameter
+
+```json
+{
+  "seasonId": 0,
+  "seasonName": "string"
+}
+```
+
+*Exemplo de retorno*
+>Status code: 200
+
+```json
+{
+  "data": {
+    "seasonId": 3,
+    "seasonName": "Temporada 3"
+  },
+  "friendlyErrorMessage": null,
+  "message": "Registro atualizado com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+### `DELETE /api/Season/DeleteSeason`
+*Deletar uma temporada pelo id*
+
+>Parameter 
+
+| Name     | In    | Type           | Description                                                                                   |
+| -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
+| animeId     | query | integer(int32) |  Id do anime.                                                                              |
+
+*Exemplo de retorno*
+>Status code: 200
+
+```json
+{
+  "data": null,
+  "friendlyErrorMessage": null,
+  "message": "Registro deletado com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+## Studio 
+
+### `GET /api/Studio/ListAllStudio`
+*Listar todos os estúdios*
+
+>Body parameter - No Parameter
+
+*Exemplo de retorno*
+>Status code: 200
+
+```json
+{
+  "data": [
+    {
+      "studioId": 1,
+      "studioName": "Nippon Animation"
+    },
+    {
+      "studioId": 2,
+      "studioName": "Nippon Animation"
+    }
+  ],
+  "friendlyErrorMessage": null,
+  "message": null,
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+| 404 | Not Found | Not Found | vmResult |
+
+### `POST /api/Studio/InsertStudio`
+*Inserir um novo estúdio*
+
+> Body parameter
+
+```json
+{
+  "studioName": "string"
+}
+```
+
+*Exemplo de retorno*
+>Status code: 200
+
+```json
+{
+  "data": {
+    "studioName": "teste"
+  },
+  "friendlyErrorMessage": null,
+  "message": "Registro inserido com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+### `PUT /api/Studio/UpdateStudio`
+*Atualizar algum campo do estúdio.*
+
+> Body parameter
+```json
+{
+  "studioId": 3,
+  "studioName": "teste2"
+}
+```
+
+*Exemplo retorno*
+>Status code:
+
+```json
+{
+  "data": {
+    "studioId": 3,
+    "studioName": "teste2"
+  },
+  "friendlyErrorMessage": null,
+  "message": "Registro atualizado com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+### `DELETE /api/Studio/DeleteStudio`
+*Deletar um estúdio por id.*
+
+>Parameter 
+
+| Name     | In    | Type           | Description                                                                                   |
+| -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
+| studioId     | query | integer(int32) |  Id do estúdio.                                                                              |
+
+*Exemplo de retorno*
+
+>Status code: 200
+
+```json
+{
+  "data": null,
+  "friendlyErrorMessage": null,
+  "message": "Registro deletado com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
 
 
 

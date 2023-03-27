@@ -117,7 +117,7 @@ namespace ploomesTest.WebApi.Controllers
                 }
 
                 result.message = "Registro inserido com sucesso!";
-                return Created("teste", result);
+                return Ok(result);
             }
             catch (Exception)
             {
