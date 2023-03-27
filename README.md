@@ -55,9 +55,9 @@ DB Designer: [DbDesigner](https://dbdesigner.page.link/khAForA7rcX5SMnK6)
 | Name     | In    | Type           | Description                                                                                   |
 | -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
 | AnimeId     | query | integer(int32) |  Id do anime.                                                                              |
-| EpisodeId | query | integer(int32) |  Id do episódio.            
+| EpisodeId | query | integer(int32) |  Id do episódio.|
 
-                                                                    |
+
 *Exemplo de retorno:*
 >Status code: 200
 ```json
