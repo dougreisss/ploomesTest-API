@@ -46,7 +46,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 #### `GET /api/Anime/ListAllAnimesById`
 *Listar anime pelo id do anime e do id do episódio.*
 
-> Body parameter 
+> Parameter 
 
 | Name     | In    | Type           | Description                                                                                   |
 | -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
@@ -126,7 +126,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 #### `POST /api​/Anime​/InsertAnimeGenre`
 *Inserir um gênero para um anime.*
 
-> Body parameter 
+> Parameter 
 
 | Name     | In    | Type           | Description                                                                                   |
 | -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
@@ -192,7 +192,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 #### `DELETE /api​/Anime​/DeletarAnime`
 *Deletar o anime pelo seu id.*
 
-> Body Parameter
+> Parameter
 
 | Name     | In    | Type           | Description                                                                                   |
 | -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
@@ -220,7 +220,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 #### `GET /api/Episode/ListEpisodeByAnimeId`
 *Listar um episódio pelo id do anime.*
 
->Body parameter
+>Parameter
 
 | Name     | In    | Type           | Description                                                                                   |
 | -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
@@ -348,7 +348,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 #### `DELETE /api/Episode/DeleteEpisode`
 *Deletar um episódio pelo id do episódio e o id do anime*
 
->Body parameter
+>Parameter
 
 | Name     | In    | Type           | Description                                                                                   |
 | -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
@@ -376,7 +376,7 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
 #### `GET /api/Genre/ListGenreByAnimeId`
 *Listar todos os gêneros pelo anime id*
 
->Body parameter
+>Parameter
 
 | Name     | In    | Type           | Description                                                                                   |
 | -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
@@ -476,6 +476,61 @@ Swagger endpoints: [SwaggerUI](https://prjanimetest.azurewebsites.net/swagger/in
   },
   "friendlyErrorMessage": null,
   "message": "Registro atualizado com sucesso!",
+  "stackTrace": null
+}
+```
+
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+#### `POST /api/Genre/InsertGenre`
+*Inserir um novo gênero*
+
+> Body parameter
+
+```json
+{
+  "genreName": "teste"
+}
+```
+
+*Exemplo de retorno*
+>Status code: 200
+
+```json
+{
+  "data": {
+    "genreName": "teste"
+  },
+  "friendlyErrorMessage": null,
+  "message": "Registro inserido com sucesso!",
+  "stackTrace": null
+}
+```
+| Status | Meaning                                                          | Description | Schema                        |
+| ------ | ---------------------------------------------------------------- | ----------- | ----------------------------- |
+| 200    | OK     | Success     | vmResult       |
+| 400    | Bad Request | Bad Request | vmResult |
+
+#### `DELETE /api/Genre/DeleteGenre`
+*Deletar um gênero por id*
+
+> Parameter
+
+| Name     | In    | Type           | Description                                                                                   |
+| -------- | ----- | -------------- |  --------------------------------------------------------------------------------------------- |
+| GenreId     | query | integer(int32) |  Id do gênero.                                                                              |
+
+*Exemplo de retorno*
+>Status code: 200
+
+```json
+{
+  "data": null,
+  "friendlyErrorMessage": null,
+  "message": "Registro deletado com sucesso!",
   "stackTrace": null
 }
 ```
